@@ -11,6 +11,7 @@ else
 
 pub fn main() !void {
     const stdout = std.io.getStdOut().writer();
+    try stdout.print("Hello from main!\n", .{});
     if (enable_embed) {
         try stdout.print("Content: {s}\n", .{embedded_content.?});
     }else{

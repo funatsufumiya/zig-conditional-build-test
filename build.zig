@@ -26,7 +26,7 @@ pub fn build(b: *std.Build) void {
     options.addOption(bool, "enable_embed", embed_option);
 
     const lib = b.addStaticLibrary(.{
-        .name = "250118_conditional",
+        .name = "zig_conditional_build_test",
         // In this case the main source file is merely a path, however, in more
         // complicated build scripts, this could be a generated file.
         .root_source_file = b.path("src/lib.zig"),
@@ -40,7 +40,7 @@ pub fn build(b: *std.Build) void {
     b.installArtifact(lib);
 
     const exe = b.addExecutable(.{
-        .name = "250118_conditional",
+        .name = "zig_conditional_build_test",
         .root_source_file = b.path("src/main.zig"),
         .target = target,
         .optimize = optimize,
